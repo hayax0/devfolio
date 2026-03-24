@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  password_hash String
+  plan          String   @default("FREE")
+  createdAt     DateTime @default(now())
+
+  profile Profile?
+}
+
+model Analytics {
+  id        String   @id @default(cuid())
+  profileId String   @unique
+  views     Int      @default(0)
+  clicks    Int      @default(0)
+  updatedAt DateTime @updatedAt
+
+  profile Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+}
+
+model Profile {
+  id     String @id @default(uuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  slug      String  @unique
+  fullName  String
+  role      String
+  bio       String? @db.Text
+  avatarUrl String?
+  bannerUrl String?
+
+  whatsappNumber  String?
+  whatsappMessage String?
+
+  theme       String  @default("dark")
+  customColor String?
+
+  links     Link[]
+  projects  Project[]
+  analytics Analytics?
+}
+
+model Link {
+  id        String  @id @default(uuid())
+  profileId String
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  title    String
+  url      String
+  position Int    @default(0)
+}
+
+model Project {
+  id        String  @id @default(uuid())
+  profileId String
+  profile   Profile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+
+  title       String
+  description String  @db.Text
+  linkUrl     String?
+  position    Int     @default(0)
+}
