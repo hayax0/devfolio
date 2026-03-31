@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <h1>📁 DevFolio</h1>
+  <p><strong>Gerador de Portfólio para Desenvolvedores</strong></p>
 
-## Getting Started
+  <p>
+    <img src="https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js" alt="Next.js" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+    <img src="https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma" />
+    <img src="https://img.shields.io/badge/Railway-131415?style=flat-square&logo=railway&logoColor=white" alt="Railway" />
+  </p>
 
-First, run the development server:
+  <p>Hub central para reunir links, projetos e informações profissionais em uma vitrine digital personalizada.</p>
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📖 Sobre o Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+O **DevFolio** é uma ferramenta para desenvolvedores centralizarem sua presença online. Através de um painel de gerenciamento, o usuário consegue configurar sua biografia, links sociais e expor seus principais projetos de forma organizada e rápida.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Funcionalidades
 
-## Learn More
+- **🌐 URL Personalizada**: Definição de slug único para o perfil.
+- **🎨 Editor de Perfil**: Customização de Banner, Avatar e Bio.
+- **🔗 Gestão de Conteúdo**: Cadastro de links e vitrine de projetos.
+- **📊 Analytics Simples**: Monitoramento de visualizações e cliques.
+- **📱 Responsivo**: Interface adaptada para qualquer dispositivo.
 
-To learn more about Next.js, take a look at the following resources:
+## 💻 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Framework:** Next.js 15 (App Router)
+- **Linguagem:** TypeScript
+- **Estilização:** Tailwind CSS
+- **Auth:** Clerk
+- **Banco de Dados:** PostgreSQL (Hospedado no **Railway**)
+- **ORM:** Prisma
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Diferenciais Técnicos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Relacionamentos Prisma:** Estrutura vinculando usuários a perfis, links e projetos.
+* **Server Actions:** Manipulação de dados e revalidação de cache sem necessidade de APIs externas complexas.
+* **Validação de Slug:** Verificação de disponibilidade de URL em tempo real.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚙️ Como Rodar o Projeto
+
+1. **Clone o repositório:**
+   `git clone https://github.com/hayax0/devfolio.git`
+
+2. **Instale as dependências:**
+   `npm install`
+
+3. **Configure as variáveis de ambiente (.env):**
+   ```env
+   DATABASE_URL="sua_url_do_postgres_no_railway"
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="sua_key_do_clerk"
+   CLERK_SECRET_KEY="seu_secret_do_clerk"
+   
+4. **Inicie o servidor:**
+`npm run dev`
+
+👨‍💻 Autor
+Caio Campos
+Graduando em Engenharia de Software (UVA) e Técnico em Desenvolvimento de Sistemas (NAVE/RJ).
+
+<div align="center">
+<p>Desenvolvido por <a href="https://www.google.com/search?q=https://github.com/hayax0">Caio Campos</a></p>
+</div>
